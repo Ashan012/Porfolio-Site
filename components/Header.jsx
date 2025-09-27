@@ -10,7 +10,7 @@ function Header() {
         <Image
           src={assets.profile_img1}
           alt="profile image"
-          className="rounded-full w-32 mt:25 sm:mt-1 lg:mt:10"
+          className="rounded-full w-32 mt-25 sm:mt-1 lg:mt-10"
         />
       </div>
       <h3 className="flex items-center gap-2 text-xl md:text-2xl mb-3">
