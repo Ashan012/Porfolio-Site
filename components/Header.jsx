@@ -5,12 +5,12 @@ import React from "react";
 
 function Header() {
   return (
-    <div className="w-11/12 max-w-3xl text-center mx-auto h-auto sm:h-screen  flex flex-col items-center  sm:justify-center  gap-4 ">
+    <div className="w-11/12 max-w-3xl text-center mx-auto h-auto  flex flex-col items-center    gap-4 ">
       <div>
         <Image
           src={assets.profile_img1}
           alt="profile image"
-          className="rounded-full w-32 mt-20 sm:mt-0"
+          className="rounded-full w-32 mt-[70%]"
         />
       </div>
       <h3 className="flex items-center gap-2 text-xl md:text-2xl mb-3">
