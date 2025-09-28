@@ -18,12 +18,11 @@ function Navbar() {
     window.addEventListener("scroll", () => {
       if (scroll > 50) {
         setIsScroll(true);
-        console.log(isScroll);
       } else {
         setIsScroll(false);
       }
     });
-  }, [isScroll]);
+  }, []);
   return (
     <>
       <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] opacity-50">
@@ -40,7 +39,7 @@ function Navbar() {
       >
         <a href="#top">
           <Image
-            src={assets.logo1}
+            src={assets.logo2}
             alt="logo"
             className="w-28 cursor-pointer mr-14"
           />
