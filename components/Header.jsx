@@ -39,7 +39,7 @@ function Header() {
           />
         </a>
         <a
-          href="/sample-resume.pdf"
+          href="/Ashan-resume.pdf"
           download
           className="px-10 py-3 border border-gray-500 rounded-full  flex items-center gap-2"
         >
