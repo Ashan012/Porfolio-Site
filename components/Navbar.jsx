@@ -141,6 +141,63 @@ function Navbar() {
         </ul>
       </nav>
     </>
+    // <div className="w-11/12 mx-auto h-22 flex py-5 mb-10">
+    //   <div className="logo w-[20%]">
+    //     <Image src={assets.logo} alt="logo" className="w-full" />
+    //   </div>
+    //   <nav className="w-full">
+    //     <ul className="hidden md:flex items-center justify-center gap-6 lg:gap-8 rounded-full px-12 py-3 ">
+    //       <li>
+    //         <a href="#top" className="font-sans">
+    //           Home
+    //         </a>
+    //       </li>
+    //       <li>
+    //         <a className="font-sans" href="#about">
+    //           About
+    //         </a>
+    //       </li>
+    //       <li>
+    //         <a className="font-sans" href="#services">
+    //           Services
+    //         </a>
+    //       </li>
+    //       <li>
+    //         <a className="font-sans" href="#work">
+    //           My Work
+    //         </a>
+    //       </li>
+    //       <li>
+    //         <a className="font-sans" href="#contact">
+    //           Contact us
+    //         </a>
+    //       </li>
+    //     </ul>
+    //   </nav>
+    //   <div className="contact  w-[20%]">
+    //     <div className="flex gap-4 items-center">
+    //       {/* <button>
+    //          <Image src={assets.moon_icon} alt="moon icon" className="w-6" />
+    //        </button> */}
+    //       <a
+    //         href="#contact"
+    //         className="font-sans  hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4"
+    //       >
+    //         Contact
+    //         <Image src={assets.arrow_icon} alt="arrowIcon" className="w-3" />
+    //       </a>
+
+    //       <button className="block md:hidden ml-3">
+    //         <Image
+    //           src={assets.menu_black}
+    //           alt="menu icon"
+    //           className="w-6"
+    //           onClick={openMenu}
+    //         />
+    //       </button>
+    //     </div>
+    //   </div>
+    // </div>
   );
 }
 
