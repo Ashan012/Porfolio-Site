@@ -104,9 +104,10 @@ export const workData = [
     link: "https://ashan-jameel.vercel.app/",
   },
   {
-    title: "Portfolio Site",
-    description: "Web Design",
+    title: "Weather App",
+    description: "Weather Forecast",
     bgImage: "/work-4.png",
+    link: "https://weather-app90.vercel.app/",
   },
 ];
 
