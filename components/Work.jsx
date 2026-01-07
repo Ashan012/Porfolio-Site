@@ -1,53 +1,71 @@
 import { assets, workData } from "@/assets/assets";
 import Image from "next/image";
-import React from "react";
 
-const Work = () => {
+export default function Work() {
   return (
-    <div id="work" className="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg ">My Portfolio</h4>
-      <h2 className="text-center text-5xl">My latest Work </h2>
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12">
-        Welcome to my web development portfolio! Explore a collection of
-        projects showcasing my expertise in frontend web development
+    <section id="work" className="w-full px-[12%] py-20 scroll-mt-28">
+      {/* Heading */}
+      <h4 className="text-center mb-2 text-lg text-gray-500">Portfolio</h4>
+      <h2 className="text-center text-5xl font-semibold">Featured Projects</h2>
+
+      <p className="text-center max-w-2xl mx-auto mt-6 mb-14 text-gray-600">
+        A selection of real-world projects built using{" "}
+        <strong>React, Next.js, and the MERN stack</strong>, focusing on
+        performance, scalability, and clean user experience.
       </p>
 
-      <div className="grid  sm:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 my-10 gap-5">
+      {/* Projects Grid */}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {workData.map((project, index) => (
           <a
+            key={index}
             href={project.link}
             target="_blank"
-            className="aspect-square bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group"
-            key={index}
-            style={{ backgroundImage: `url(${project.bgImage})` }}
+            className="group rounded-xl overflow-hidden border border-gray-300 hover:shadow-lg transition"
           >
-            <div className=" bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-              <div>
-                <h2 className="font-semibold">{project.title}</h2>
-                <p className="text-sm text-gray-700 ">{project.description}</p>
-              </div>
-              <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
-                <Image
-                  src={assets.send_icon}
-                  alt="send icon"
-                  className=" w-5"
-                />
+            {/* Image */}
+            <div className="relative w-full h-56">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="p-5">
+              <h3 className="font-semibold text-lg mb-1">{project.title}</h3>
+
+              <p className="text-sm text-gray-600 mb-3 leading-relaxed">
+                {project.description}
+              </p>
+
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-gray-500">{project.tech}</span>
+
+                <div className="border rounded-full border-black w-9 h-9 flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
+                  <Image
+                    src={assets.send_icon}
+                    alt="View project"
+                    className="w-5"
+                  />
+                </div>
               </div>
             </div>
           </a>
         ))}
       </div>
 
+      {/* CTA */}
       <a
-        href=""
-        className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700
-      rounded-full py-3 px-10 mx-auto my-20 hover:bg-[#fcf4ff] duration-500"
+        href="#contact"
+        className="w-max flex items-center justify-center gap-2 text-gray-700 border border-gray-700
+        rounded-full py-3 px-10 mx-auto mt-20 hover:bg-[#fcf4ff] transition"
       >
-        Show more
-        <Image src={assets.right_arrow_bold} alt="right arrow" />
+        Let’s Work Together
+        <Image src={assets.right_arrow_bold} alt="Arrow" />
       </a>
-    </div>
+    </section>
   );
-};
-
-export default Work;
+}

@@ -1,59 +1,74 @@
 import { assets, infoList, toolsData } from "@/assets/assets";
 import Image from "next/image";
-import React from "react";
 
-function About() {
+export default function About() {
   return (
-    <div id="about" className="w-full px-[12%] py-10 scroll-mt-20 mt-20">
-      <h4 className="text-center mb-2 text-lg ">Introduction</h4>
-      <h2 className="text-center text-5xl">About me</h2>
+    <section id="about" className="w-full px-[12%] py-20 scroll-mt-28">
+      {/* Section Heading */}
+      <h4 className="text-center mb-2 text-lg text-gray-500">Introduction</h4>
+      <h2 className="text-center text-5xl font-semibold mb-16">About Me</h2>
 
-      <div className="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
-        <div className="w-64 sm:w-80 rounded-3xl max-w-none">
+      <div className="flex w-full flex-col lg:flex-row items-center gap-20">
+        {/* Image */}
+        <div className="w-64 sm:w-80 rounded-3xl">
           <Image
             src={assets.profile_img2}
-            alt="user"
+            alt="Ashan Jameel - MERN Stack Developer"
             className="w-full rounded-3xl"
+            priority
           />
         </div>
+
+        {/* Content */}
         <div className="flex-1">
-          <p className="mb-10 max-w-2xl">
-            I am a passionate Frontend Developer at the start of my professional
-            journey. With a strong foundation in modern web technologies, I am
-            eager to collaborate with organizations and contribute to their
-            success and growth.
+          <p className="mb-10 max-w-2xl text-gray-600 leading-relaxed">
+            I’m a <strong>MERN Stack Developer</strong> with a strong focus on{" "}
+            <strong>Next.js</strong>, building fast, scalable, and SEO-optimized
+            web applications. I enjoy turning complex ideas into clean,
+            user-friendly interfaces while keeping performance and
+            maintainability in mind.
+            <br />
+            <br />
+            I’ve worked on real-world projects involving authentication,
+            dashboards, REST APIs, and database-driven applications using modern
+            React and Next.js architecture.
           </p>
 
-          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
-            {infoList.map(({ icon, iconDark, title, description }, index) => (
+          {/* Info Cards */}
+          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mb-10">
+            {infoList.map(({ icon, title, description }, index) => (
               <li
-                className="border-[0.5px] border-gray-400 rounded-xl p-6 
-                cursor-pointer hover:bg-[#fcf4ff] 
-                hover:-translate-y-1 duration-500 "
                 key={index}
+                className="border border-gray-300 rounded-xl p-6 cursor-pointer 
+                hover:bg-[#fcf4ff] hover:-translate-y-1 transition duration-300"
               >
-                <Image src={icon} alt={title} className="w-7 mt-3" />
-                <h3 className="my-4 font-semibold text-gray-700">{title}</h3>
-                <p className="text-gray-600 text-sm ">{description}</p>
+                <Image src={icon} alt={title} className="w-7 mt-2" />
+                <h3 className="my-4 font-semibold text-gray-800">{title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {description}
+                </p>
               </li>
             ))}
           </ul>
 
-          <h4 className="my-6 text-gray-700 ">Tools I use</h4>
-          <ul className="flex items-center gap-3 sm:gap-5">
-            {toolsData.map((tools, index) => (
+          {/* Tools */}
+          <h4 className="my-4 text-gray-700 font-medium">
+            Tools & Technologies
+          </h4>
+          <ul className="flex flex-wrap items-center gap-4">
+            {toolsData.map((tool, index) => (
               <li
                 key={index}
-                className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer  hover:-translate-y-1 duration-500 "
+                className="flex items-center justify-center w-12 sm:w-14 aspect-square 
+                border border-gray-400 rounded-lg cursor-pointer 
+                hover:-translate-y-1 transition duration-300"
               >
-                <Image src={tools} alt="tools" className="w-5 sm:w-7" />
+                <Image src={tool} alt="Development Tool" className="w-6" />
               </li>
             ))}
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
-
-export default About;

@@ -1,58 +1,64 @@
 "use client";
-import { assets } from "@/assets/assets";
 import Image from "next/image";
-import React from "react";
+import { assets } from "@/assets/assets";
 
-function Header() {
+export default function Header() {
   return (
-    <div className="w-11/12 max-w-3xl text-center mx-auto h-auto  flex flex-col items-center    gap-4 ">
-      <div>
-        <Image
-          src={assets.profile_img1}
-          alt="profile image"
-          className="rounded-full w-32 mt-[30%]"
-        />
-      </div>
-      <h3 className="flex items-center gap-2 text-xl md:text-2xl mb-3">
-        Hi I'm Ashan Jameel
-        <Image src={assets.hand_icon} alt="hand Icon" className="w-6" />
+    <section
+      id="top"
+      className="pt-28 w-11/12 max-w-4xl mx-auto min-h-screen flex flex-col items-center justify-center text-center gap-5"
+    >
+      {/* Profile Image */}
+      <Image
+        src={assets.profile_img1}
+        alt="Ashan Jameel - MERN Stack Developer"
+        className="rounded-full w-32"
+        priority
+      />
+
+      {/* Intro */}
+      <h3 className="flex items-center gap-2 text-xl md:text-2xl font-medium">
+        Hi, I’m Ashan Jameel
+        <Image src={assets.hand_icon} alt="Waving hand" className="w-6" />
       </h3>
 
-      <h1 className="text-3xl sm:text-6xl lg:text-[66px]">
-        frontend web developer based in Karahi
+      {/* Main Heading */}
+      <h1 className="text-4xl sm:text-6xl lg:text-[66px] font-semibold leading-tight">
+        MERN Stack Developer <br />
+        <span className="text-rose-600">Next.js Focused</span>
       </h1>
-      <p>
-        Aspiring Frontend Developer from Karachi, excited to begin my career in
-        the software industry and build modern, user-friendly web applications.
+
+      {/* Description */}
+      <p className="max-w-2xl text-gray-600 text-base sm:text-lg">
+        I build fast, scalable, and SEO-friendly web applications using{" "}
+        <strong>MongoDB, Express, React, Node.js</strong> and{" "}
+        <strong>Next.js</strong>. Passionate about clean UI, performance, and
+        real-world problem solving.
       </p>
 
-      <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+      {/* CTA Buttons */}
+      <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
         <a
           href="#contact"
-          className="px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2"
+          className="px-10 py-3 rounded-full bg-black text-white flex items-center gap-2 hover:scale-105 transition"
         >
-          contact me
-          <Image
-            src={assets.right_arrow_white}
-            alt="right arrow"
-            className="w-4"
-          />
+          Contact Me
+          <Image src={assets.right_arrow_white} alt="Arrow" className="w-4" />
         </a>
+
         <a
           href="/Ashan-resume.pdf"
           download
-          className="px-10 py-3 border border-gray-500 rounded-full  flex items-center gap-2"
+          className="px-10 py-3 border border-gray-500 rounded-full flex items-center gap-2 hover:bg-gray-100 transition"
         >
-          my resume
+          Download Resume
           <Image
             src={assets.download_icon}
-            alt="download icon"
+            alt="Download resume"
             className="w-4"
           />
         </a>
       </div>
-    </div>
+    </section>
   );
 }
-
-export default Header;

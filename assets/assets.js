@@ -110,32 +110,33 @@ export const workData = [
     link: "https://weather-app90.vercel.app/",
   },
 ];
-
 export const serviceData = [
   {
     icon: assets.web_icon,
-    title: "Responsive Website Development",
-    description: "Web development is the process of building, programming...",
+    title: "Responsive Web Development",
+    description:
+      "Building modern, fully responsive websites that work seamlessly across all devices using HTML, CSS, Tailwind, React, and Next.js.",
     link: "",
   },
   {
     icon: assets.mobile_icon,
-    title: "Single Page Applications (SPA) with React",
+    title: "Single Page Applications (React)",
     description:
-      "API integration aur real-time features (like search, filters, charts)",
+      "Developing fast and interactive single-page applications with React, including API integration, dynamic data handling, and smooth user experiences.",
     link: "",
   },
   {
     icon: assets.ui_icon,
-    title: "UI/UX design",
+    title: "UI / UX Implementation",
     description:
-      "UI/UX design focuses on creating a seamless user experience...",
+      "Converting UI/UX designs into clean, user-friendly interfaces with a strong focus on accessibility, performance, and visual consistency.",
     link: "",
   },
   {
     icon: assets.graphics_icon,
-    title: "Next.js Web Apps",
-    description: "SEO-friendly blogs, e-commerce stores",
+    title: "Next.js Web Applications",
+    description:
+      "Creating SEO-optimized and scalable web applications using Next.js, including blogs, dashboards, and full-stack MERN solutions.",
     link: "",
   },
 ];

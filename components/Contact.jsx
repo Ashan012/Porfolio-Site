@@ -1,87 +1,104 @@
 "use client";
-import { assets } from "@/assets/assets";
 import Image from "next/image";
-import React, { useState } from "react";
+import { assets } from "@/assets/assets";
+import { useState } from "react";
 
-const Contact = () => {
-  const [result, setResult] = useState("");
+export default function Contact() {
+  const [status, setStatus] = useState("");
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
 
+    const formData = new FormData(e.target);
     formData.append("access_key", "4a644437-862d-42e6-8dcd-ec594a79154c");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
+    const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       body: formData,
     });
 
-    const data = await response.json();
+    const data = await res.json();
 
     if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
+      setStatus("success");
+      e.target.reset();
     } else {
-      console.log("Error", data);
-      setResult(data.message);
+      setStatus("error");
     }
   };
+
   return (
-    <div
+    <section
       id="contact"
-      className="w-full px-[12%] py-10 scroll-mt-20
-    bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:90%_auto]"
+      className="w-full px-[12%] py-20 scroll-mt-28
+      bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:90%_auto]"
     >
-      <h4 className="text-center mb-2 text-lg ">Connect with me</h4>
-      <h2 className="text-center text-5xl">Get in touch</h2>
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12">
-        I'd love to hear from you! If you have any question, comments, or
-        feedback, please use the form below.
+      {/* Heading */}
+      <h4 className="text-center mb-2 text-lg text-gray-500">Contact</h4>
+      <h2 className="text-center text-5xl font-semibold">
+        Let’s Build Something Together
+      </h2>
+
+      <p className="text-center max-w-2xl mx-auto mt-6 mb-14 text-gray-600">
+        Have a project in mind, a job opportunity, or just want to connect? Feel
+        free to reach out — I usually respond within 24 hours.
       </p>
 
-      <form className="max-w-2xl mx-auto" onSubmit={onSubmit}>
-        <div className="grid grid-cols-2 gap-6 mt-10 mb-8">
+      {/* Form */}
+      <form
+        onSubmit={onSubmit}
+        className="max-w-2xl mx-auto bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-sm"
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
           <input
             type="text"
             name="name"
-            placeholder="Enter your Name"
+            placeholder="Your Name"
             required
-            className="flex-1 p-3 outline-none border-[0.5px]
-            border-gray-400 rounded-md bg-white
-            "
+            className="p-3 border border-gray-300 rounded-md outline-none focus:border-black"
           />
+
           <input
             type="email"
             name="email"
-            placeholder="Enter your Email"
+            placeholder="Your Email"
             required
-            className="flex-1 p-3 outline-none border-[0.5px]
-            border-gray-400 rounded-md bg-white"
+            className="p-3 border border-gray-300 rounded-md outline-none focus:border-black"
           />
         </div>
+
         <textarea
           name="message"
           rows="6"
+          placeholder="Tell me about your project or message..."
           required
-          className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6"
+          className="w-full p-4 border border-gray-300 rounded-md outline-none focus:border-black mb-6"
         ></textarea>
+
         <button
           type="submit"
-          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500"
+          disabled={status === "sending"}
+          className="mx-auto flex items-center gap-2 px-10 py-3 bg-black text-white rounded-full
+          hover:bg-gray-900 transition disabled:opacity-60"
         >
-          Submit now
-          <Image
-            src={assets.right_arrow_white}
-            alt="right arrow "
-            className="w-4"
-          />
+          {status === "sending" ? "Sending..." : "Send Message"}
+          <Image src={assets.right_arrow_white} alt="Arrow" className="w-4" />
         </button>
-        {result}
-      </form>
-    </div>
-  );
-};
 
-export default Contact;
+        {/* Status Messages */}
+        {status === "success" && (
+          <p className="text-green-600 text-center mt-4">
+            ✅ Message sent successfully. I’ll get back to you soon.
+          </p>
+        )}
+
+        {status === "error" && (
+          <p className="text-red-600 text-center mt-4">
+            ❌ Something went wrong. Please try again.
+          </p>
+        )}
+      </form>
+    </section>
+  );
+}
