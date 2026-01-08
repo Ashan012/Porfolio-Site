@@ -24,8 +24,7 @@ export default function Header() {
 
       {/* Main Heading */}
       <h1 className="text-4xl sm:text-6xl lg:text-[66px] font-semibold leading-tight">
-        MERN Stack Developer <br />
-        <span className="text-rose-600">Next.js Focused</span>
+        MERN Stack Developer
       </h1>
 
       {/* Description */}
