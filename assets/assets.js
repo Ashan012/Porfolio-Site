@@ -86,27 +86,31 @@ export const assets = {
 
 export const workData = [
   {
-    title: "Food Delivery",
-    description: "Web Design",
-    bgImage: "/work-1.png",
-    link: "https://food-delivery-we.vercel.app",
+    title: "Bee Tube",
+    description:
+      "A full-featured video streaming application enabling users to upload, watch, and like videos, similar to YouTube",
+    image: "/work-1.png",
+    link: "https://beetube.vercel.app/",
   },
   {
-    title: "Ecommerce",
-    description: "Web App",
-    bgImage: "/work-2.png",
-    link: "https://e-shop-pk.vercel.app/",
+    title: "Anon Text",
+    description:
+      "A web-based anonymous feedback platform that allows users to receive honest feedback without revealing the sender’s identity.",
+    image: "/work-2.png",
+    link: "https://anontext.vercel.app/",
   },
   {
-    title: "Portfolio Site",
-    description: "Web Design",
-    bgImage: "/work-3.png",
-    link: "https://ashan-jameel.vercel.app/",
+    title: "Tomatoo",
+    description:
+      "A responsive food delivery UI built with React, featuring add-to-cart and checkout functionality.",
+    image: "/work-3.png",
+    link: "https://redtomatoo.vercel.app/",
   },
   {
     title: "Weather App",
-    description: "Weather Forecast",
-    bgImage: "/work-4.png",
+    description:
+      "A responsive weather forecast app built with React, integrating a third-party API for real-time weather updates",
+    image: "/work-4.png",
     link: "https://weather-app90.vercel.app/",
   },
 ];
