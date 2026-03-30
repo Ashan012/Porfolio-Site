@@ -24,15 +24,14 @@ export default function Header() {
 
       {/* Main Heading */}
       <h1 className="text-4xl sm:text-6xl lg:text-[66px] font-semibold leading-tight">
-        MERN Stack Developer
+        Full-Stack Web Developer (Next.js)
       </h1>
 
       {/* Description */}
       <p className="max-w-2xl text-gray-600 text-base sm:text-lg">
         I build fast, scalable, and SEO-friendly web applications using{" "}
-        <strong>MongoDB, Express, React, Node.js</strong> and{" "}
-        <strong>Next.js</strong>. Passionate about clean UI, performance, and
-        real-world problem solving.
+        <strong>MongoDB, React</strong> and <strong>Next.js</strong>. Passionate
+        about clean UI, performance, and real-world problem solving.
       </p>
 
       {/* CTA Buttons */}
